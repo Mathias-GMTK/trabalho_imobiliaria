@@ -10,6 +10,7 @@
 ## Diagrama de classe da UML
 
 
+<img width="398" height="392" alt="Diagrama de classe 2025-08-23 223710 (1)" src="https://github.com/user-attachments/assets/b8c37e20-bec7-453f-a9e0-50b8102b952e" />
 
 
 
