@@ -1,0 +1,82 @@
+# poo_trabalho_jdbc
+
+## Equipe
+
+| Equipe   | Email    |
+|----------|----------|
+| Mathias Gruber Martinhuk | mathias.martinhunk@univille.br |
+
+
+## Diagrama de classe da UML
+
+
+<img width="398" height="392" alt="Diagrama de classe 2025-08-23 223710 (1)" src="https://github.com/user-attachments/assets/b8c37e20-bec7-453f-a9e0-50b8102b952e" />
+
+
+
+
+
+
+
+<img width="751" height="615" alt="DAO 2025-08-23 232310" src="https://github.com/user-attachments/assets/08659372-90e7-48e7-b660-fbb7376ce46a" />
+
+
+
+
+
+## Diagrama MER
+
+
+
+
+<img width="478" height="679" alt="MER2 2025-08-23 232953" src="https://github.com/user-attachments/assets/0416cbfc-e7e9-4295-9685-a0c7344cbc5b" />
+
+
+
+
+Banco de Dados.
+
+Criação do schema e tabelas.
+
+create table clientes(
+id_cliente int auto_increment primary key,
+nome varchar(255) not null,
+cpf varchar(14) not null unique,
+email varchar(255),
+telefone varchar(30),
+data_cadastro varchar(255)
+);
+
+
+
+create table imovel(
+id_imovel int auto_increment primary key,
+endereco varchar(255)not null,
+tipo varchar(222) not null,
+quartos varchar(222)not null default 0,
+valor decimal(10,2)not null default 0,
+status ENUM('DISPONIVEL','INDISPONIVEL') NOT NULL DEFAULT 'DISPONIVEL'
+);
+
+
+
+create table contrato(
+id_contrato int auto_increment primary key,
+id_cliente int not null,
+id_imovel int not null,
+valor_aluguel DECIMAL(10,2) NOT NULL,
+data_inicio date not null,
+data_fim date not null,
+cadastro varchar(255),
+status ENUM('ativo','encerrado') not null default 'ativo',
+constraint fk_contrato_cliente foreign key(id_cliente)REFERENCES cliente(id),
+constraint fk_contrato_imovel foreign key(id_imovel) references IMOVEL(ID)
+);
+
+
+CREATE INDEX idx_contrato_periodo ON contrato(data_inicio, data_fim, status);
+CREATE INDEX idx_imovel_status ON imovel(status);
+
+
+ 
+
