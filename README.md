@@ -18,6 +18,13 @@
 
 
 
+<img width="751" height="615" alt="DAO 2025-08-23 232310" src="https://github.com/user-attachments/assets/08659372-90e7-48e7-b660-fbb7376ce46a" />
+
+
+
+
+
+
 
 
 ## Diagrama MER
