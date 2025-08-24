@@ -29,12 +29,13 @@
 
 
 
-<img width="424" height="511" alt="MER  2025-08-23 232615" src="https://github.com/user-attachments/assets/4c983b3e-a4fa-4a85-909f-ef1388a99c0b" />
+<img width="478" height="679" alt="MER2 2025-08-23 232953" src="https://github.com/user-attachments/assets/0416cbfc-e7e9-4295-9685-a0c7344cbc5b" />
 
 
 
 
 Banco de Dados.
+
 Criação do schema e tabelas.
 
 create table clientes(
@@ -46,6 +47,8 @@ telefone varchar(30),
 data_cadastro varchar(255)
 );
 
+
+
 create table imovel(
 id_imovel int auto_increment primary key,
 endereco varchar(255)not null,
@@ -54,6 +57,8 @@ quartos varchar(222)not null default 0,
 valor decimal(10,2)not null default 0,
 status ENUM('DISPONIVEL','INDISPONIVEL') NOT NULL DEFAULT 'DISPONIVEL'
 );
+
+
 
 create table contrato(
 id_contrato int auto_increment primary key,
@@ -67,9 +72,11 @@ status ENUM('ativo','encerrado') not null default 'ativo',
 constraint fk_contrato_cliente foreign key(id_cliente)REFERENCES cliente(id),
 constraint fk_contrato_imovel foreign key(id_imovel) references IMOVEL(ID)
 );
+
+
 CREATE INDEX idx_contrato_periodo ON contrato(data_inicio, data_fim, status);
 CREATE INDEX idx_imovel_status ON imovel(status);
 
-select * FROM contrato
+
  
 
