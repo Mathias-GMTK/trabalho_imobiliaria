@@ -24,10 +24,12 @@
 
 
 
-
-
-
 ## Diagrama MER
+
+
+
+
+<img width="424" height="511" alt="MER  2025-08-23 232615" src="https://github.com/user-attachments/assets/4c983b3e-a4fa-4a85-909f-ef1388a99c0b" />
 
 
 
